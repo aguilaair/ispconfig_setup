@@ -259,7 +259,7 @@ fi
 if [ -f /etc/debian_version ]; then
 	PreInstallCheck
 	if [ "$CFG_MULTISERVER" == "no" ]; then
-		AskQuestions
+		AskQuestionsMultiserver
 	else
 		source $APWD/distros/$DISTRO/askquestions_multiserver.sh
 		AskQuestionsMultiserver
