@@ -135,6 +135,7 @@ fi
 
 source $APWD/distros/$DISTRO/preinstallcheck.sh
 source $APWD/distros/$DISTRO/askquestions.sh
+source $APWD/distros/$DISTRO/askquestions_multiserver.sh
 
 source $APWD/distros/$DISTRO/install_basics.sh
 source $APWD/distros/$DISTRO/install_postfix.sh
@@ -259,10 +260,8 @@ fi
 if [ -f /etc/debian_version ]; then
 	PreInstallCheck
 	if [ "$CFG_MULTISERVER" == "no" ]; then
-		source $APWD/distros/$DISTRO/askquestions_multiserver.sh
 		AskQuestionsMultiserver
 	else
-		source $APWD/distros/$DISTRO/askquestions_multiserver.sh
 		AskQuestionsMultiserver
 	fi
 	InstallBasics 
